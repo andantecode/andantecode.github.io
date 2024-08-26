@@ -437,8 +437,8 @@ changyan:
 # Support for gitalk comments system.
 gitalk:
   enable: true
-  clientID: Ov23ligTcnNRiGPqw7iA
-  clientSecret: 0035942335e5fa69b5f2c3a7e8aa00beee64ed3d
+  clientID: Ov23li5sec1FMDEqOa5p
+  clientSecret: 8c29be94d020362a0533fe4aefbfd77a011fedad
   repo: andantecode.github.io
   owner: andantecode
   admin: andantecode
