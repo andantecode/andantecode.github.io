@@ -10,15 +10,15 @@ title:
 author: 작성자
 
 menu:
-  home: 홈
-  archives: 아카이브
+  home: Home
+  archives: Archive
   categories: 카테고리
   tags: 태그
-  about: About
+  about: 나
   search: 검색
 
 sidebar:
-  overview: 흝어보기
+  overview: 나
   toc: 목차
 
 post:
