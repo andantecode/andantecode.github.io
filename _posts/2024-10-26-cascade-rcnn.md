@@ -1,23 +1,23 @@
 ---
 title: Cascade R-CNN
 date: 2024-10-26
-categories: [projects]
+categories: [object detection]
 tags:
     [
-        object detection
+        mmdetection
     ]
 ---
 
 > 🔥 **Prerequisite: faster r-cnn**
 
 
-# 1. Overview
+# Overview
 
----
 
 - 기존의 object detector는 IoU의 threshold를 0.5로 고정하여 설정하는데 이건 느슨한 조건이다.
-
-![image.png](images/cf7e2b66-a779-4fab-a25b-d19c821fad56.png)
+<div align='center'>
+    <img src="https://github.com/user-attachments/assets/80e4b83e-09be-4f49-901e-fb8ae586c48b"/>
+</div>
 
 - 왼쪽은 느슨한 조건으로 인해 positive box에 노이즈가 많이 낀 상태로 학습되어 false positive가 높은 상황이다.
 - 반면 오른쪽은 적은 close false positive를 출력하고 높은 수준의 결과를 보여준다.
@@ -28,21 +28,25 @@ tags:
 
 - 위의 생각을 정리하여 제안한 내용이 순차적으로 단계를 거치며 close false positive에 강인하게 만들자는 것이다.
 - cascade r-cnn은 이전 단계 헤드의 출력을 다음 단계 헤드로 보내 순차적으로 학습을 시킨다.
-- 각 헤드는 순차적으로 높은 **u**를 가지며, 낮은 **u**로 학습된 출력을 **resampling**하여 더 높은 **u**의 입력으로 사용하면 더 좋은 분포일 것이라는 가설이 들어있다.
-
-## 2. MMDetection cascade r-cnn
+- 각 헤드는 순차적으로 높은 **u**를 가지며, <br>낮은 **u**로 학습된 출력을 **resampling**하여 더 높은 **u**의 입력으로 사용하면 더 좋은 분포일 것이라는 가설이 들어있다.
 
 ---
+
+# MMDetection cascade r-cnn
+
+
 
 - 프로젝트를 진행하며 수도 없이 봤던 cascare r-cnn의 config 파일을 뜯어보자.
 - 아래 내용은 cascade r-cnn(resnet50 + fpn) 기준으로 설명한다.
     - [깃허브 링크](https://github.com/open-mmlab/mmdetection/blob/main/configs/_base_/models/cascade-rcnn_r50_fpn.py)
 
-![image.png](images/image.png)
-
-### 2-1. backbone
+![image](https://github.com/user-attachments/assets/11daedc8-32f5-4106-be20-9ed8c6d4fd61)
 
 ---
+
+## backbone
+
+
 
 ```python
 # cascade rcnn backbone resnet50
@@ -69,11 +73,13 @@ model = dict(
 
 - **init_cfg**를 통해 초기화 관련 설정을 할 수 있다.
 - 위의 코드에선 torchvision의 resnet50 가중치를 가져와 사용한다.
-- mmdetection 3.x 버전에서는 mmpretrain, 2.x 버전에서는 mmcls를 import하여 가져올 수 있다. (해당 방법은 {다음 문서}를 확인)
-
-### 2-2. neck
+- mmdetection 3.x 버전에서는 mmpretrain, 2.x 버전에서는 mmcls를 import하여 가져올 수 있다. 
 
 ---
+
+## neck
+
+
 
 ```python
 # cascade rcnn neck fpn
@@ -96,9 +102,12 @@ model=dict(
 추가로 1개의 feature map이 생성된다. c5를 기반으로 1개의 extra output을 생성한다고 한다.
 > 
 
-### 2-3. rpn
 
 ---
+
+## rpn
+
+
 
 ```python
 # cascade rcnn rpn
@@ -136,9 +145,11 @@ model=dict(
 - 그림에는 따로 표현을 못했는데 rpn도 학습된다.
 - roi_head와 마찬가지로 cls, bbox에 대한 손실 함수를 두고 더 정교한 region proposals를 생성하도록 학습되는 형태이다.
 
-### 2-4. roi head
-
 ---
+
+## roi head
+
+
 
 ```python
 # cascade rcnn roi head
@@ -207,7 +218,7 @@ model=dict(
     )
 ```
 
-- 먼저 roi head는 rpn이 예측한 region proposals를 크기 기준으로 적합한 스테이지에 roi align을 통해 feature map을 representation한다.
+- roi head는 rpn이 예측한 region proposals를 크기 기준으로 적합한 스테이지에 roi align을 통해 feature map을 representation한다.
     - 정확히는 region proposals를 representation 하는 것으로 이해했다.
     - 크기가 작은 박스는 저수준의 스테이지에 align하여 representation한다.
     - 크기가 비교적 큰 박스는 고수준의 스테이지에 align하여 representation한다.
