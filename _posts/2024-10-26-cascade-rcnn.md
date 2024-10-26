@@ -17,7 +17,7 @@ tags:
 
 - 기존의 object detector는 IoU의 threshold를 0.5로 고정하여 설정하는데 이건 느슨한 조건이다.
 
-![image.png](cf7e2b66-a779-4fab-a25b-d19c821fad56.png)
+![image.png](images/cf7e2b66-a779-4fab-a25b-d19c821fad56.png)
 
 - 왼쪽은 느슨한 조건으로 인해 positive box에 노이즈가 많이 낀 상태로 학습되어 false positive가 높은 상황이다.
 - 반면 오른쪽은 적은 close false positive를 출력하고 높은 수준의 결과를 보여준다.
@@ -38,7 +38,7 @@ tags:
 - 아래 내용은 cascade r-cnn(resnet50 + fpn) 기준으로 설명한다.
     - [깃허브 링크](https://github.com/open-mmlab/mmdetection/blob/main/configs/_base_/models/cascade-rcnn_r50_fpn.py)
 
-![image.png](image.png)
+![image.png](images/image.png)
 
 ### 2-1. backbone
 
