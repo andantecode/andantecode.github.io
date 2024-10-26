@@ -92,7 +92,7 @@ model=dict(
 - **in_channels**는 백본의 출력 채널과 동일해야한다.
 
 > 여기서 의문점이 **num_outs**의 값이 4가 아닌 5라는 점이다.
-(c2, c3, c4, c5)를 통해 4개의 feature map을 representation하는 것은 이해할 수 있는데
+(c2, c3, c4, c5)를 통해 4개의 feature map을 representation하고
 추가로 1개의 feature map이 생성된다. c5를 기반으로 1개의 extra output을 생성한다고 한다.
 > 
 
