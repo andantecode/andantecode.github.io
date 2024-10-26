@@ -9,15 +9,12 @@ tags:
 ---
 
 
-# cascade r-cnn
 
 
 
-<aside>
+> 🔥 **Prerequisite: faster r-cnn**
 
-🔥**Prerequisite: faster r-cnn**
 
-</aside>
 
 # 1. Overview
 
