@@ -1,10 +1,10 @@
 ---
 title: Cascade R-CNN
 date: 2024-10-26
-categories: [object detection]
+categories: [mmdetection]
 tags:
     [
-        mmdetection
+        object detection, theory
     ]
 ---
 
