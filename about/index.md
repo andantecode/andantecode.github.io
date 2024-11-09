@@ -54,7 +54,8 @@ type: about
 - 사용 기술
     - tensorflow, suricata, mlp
 
-### <span style="color: gray">**- 그 다음은?**</span>
+### <span style="color: gray">**- Seaweed foreign matter detection model**</span>
+> 기간: 2024.09~2024.11
 
 ---
 
