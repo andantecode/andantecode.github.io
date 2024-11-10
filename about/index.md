@@ -56,7 +56,10 @@ type: about
 
 ### <span style="color: gray">**- Seaweed foreign matter detection model**</span>
 > 기간: 2024.09~2024.11
-
+- 소개: 김 제품 품질 향상을 위한 이물질 결함 검출 및 품질 분류 AI 모델 개발
+- 기여: 데이터 분석 및 2-stage 모델 Cascade-RCNN 기반 파인튜닝 및 실험
+- 문제 정의
+    -
 ---
 
 ## <span style="color: tomato">Strength</span>
