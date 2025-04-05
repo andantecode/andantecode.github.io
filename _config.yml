@@ -5,8 +5,8 @@
 
 # Site
 title: ANDANTECODE
-subtitle: 천천히 내딛는 발걸음
-description: AI Engineer
+subtitle: 천천히 걷는 사람
+description: 꾸준히 앞으로 나아가기
 author: andantecode
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: ko
@@ -87,7 +87,7 @@ keywords: "Jekyll, NexT"
 rss: false
 
 # Specify the date when the site was setup
-since: 2024
+since: 2025
 
 # icon between year and author @Footer
 authoricon: heart
@@ -174,7 +174,7 @@ font:
   global:
     # external: true will load this font family from host.
     external: true
-    family: "Jua"
+    family: "Poor Story"
 
   # Font settings for Headlines (h1, h2, h3, h4, h5, h6)
   # Fallback to `global` font settings.
@@ -187,6 +187,7 @@ font:
   posts:
     external: true
     family:
+    size:
 
   # Font settings for Logo
   # Fallback to `global` font settings.
@@ -194,13 +195,13 @@ font:
   logo:
     external: true
     family:
-    size:
+    size: 
 
   # Font settings for <code> and code blocks.
   codes:
     external: true
-    family: "Ubuntu Mono"
-    size:
+    family: "IBM Plex Mono"
+    size: 14
 
 
 
@@ -266,8 +267,8 @@ sidebar:
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  Totally remove sidebar including sidebar toggle.
   #display: post
-  display: always
-  #display: hide
+  #display: always
+  display: hide
   #display: remove
 
   # Sidebar offset from top menubar in pixels.
@@ -354,7 +355,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night bright
 
 
 # ---------------------------------------------------------------

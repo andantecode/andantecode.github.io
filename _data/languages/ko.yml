@@ -12,10 +12,10 @@ author: 작성자
 menu:
   home: Home
   archives: Archive
-  categories: 카테고리
-  tags: 태그
-  about: 나
-  search: 검색
+  categories: Category
+  tags: Tag
+  about: About Me
+  search: Search
 
 sidebar:
   overview: 나
@@ -23,10 +23,10 @@ sidebar:
 
 post:
   sticky: 고정
-  posted: 작성일
+  posted: Posted at
   modified: Updated at
-  in: In
-  read_more: more
+  in: in
+  read_more: read more
   untitled: 제목 없음
   toc_empty: 목차 없음
   visitors: 방문객
