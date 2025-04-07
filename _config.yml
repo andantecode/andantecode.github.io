@@ -168,7 +168,7 @@ font:
   enable: true
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default)
-  host:
+  host: 
 
   # Global font settings used on <body> element.
   global:
@@ -438,8 +438,8 @@ changyan:
 # Support for gitalk comments system.
 gitalk:
   enable: true
-  clientID: Ov23li5sec1FMDEqOa5p
-  clientSecret: 8c29be94d020362a0533fe4aefbfd77a011fedad
+  clientID: Ov23liL9RZMJQjXDctuW
+  clientSecret: 7ff5e9063170a1df0653da05a80592c6fb9b7bf8
   repo: andantecode.github.io
   owner: andantecode
   admin: andantecode
